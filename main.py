@@ -1,4 +1,4 @@
-
+# Partner Hector Borjas
 def encoder(unencoded_password):
     encoded = ""
     x = 0
@@ -24,16 +24,21 @@ def decoder(encoded_password):
     return unencoded
 
 
+def main():
+    while True:
+        choice = int(input("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n \n Please enter an option: "))
+        if choice == 1:
+            unencoded_password = input("Please enter your password to encode: ")
+            encoded_password = encoder(unencoded_password)
+            print("Your password has been encoded and stored!\n")
+        elif choice == 2:
+            print("The encoded password is ", end="")
+            print(encoder(unencoded_password), end="")
+            print(", and the original password is", unencoded_password,".")
+
+        elif choice == 3:
+            break
 
 
-
-
-
-
-unencoded_password = input("Please enter a password to encode: ")
-
-print("Encoded Password is: \n")
-print(encoder(unencoded_password))
-encoded = encoder(unencoded_password)
-print("Unencoded Password is: \n")
-print(unencoded_password(encoded))
+if __name__ == '__main__':
+    main()
